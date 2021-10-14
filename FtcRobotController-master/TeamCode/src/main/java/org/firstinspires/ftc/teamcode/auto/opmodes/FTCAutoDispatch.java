@@ -4,6 +4,7 @@ import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
 
 import org.firstinspires.ftc.ftcdevcommon.RobotLogCommon;
 import org.firstinspires.ftc.ftcdevcommon.android.WorkingDirectory;
+import org.firstinspires.ftc.teamcode.auto.FTCAuto;
 import org.firstinspires.ftc.teamcode.auto.FTCAutoBasic;
 import org.firstinspires.ftc.teamcode.common.FTCErrorHandling;
 import org.firstinspires.ftc.teamcode.common.RobotConstants;
@@ -22,7 +23,7 @@ public class FTCAutoDispatch {
         // access to the public data fields and methods in LinearOpMode.
         try {
             RobotLogCommon.initialize(WorkingDirectory.getWorkingDirectory() + RobotConstants.logDir);
-            FTCAutoBasic runAuto = new FTCAutoBasic(pOpMode, pAlliance, pLinear);
+            FTCAuto runAuto = new FTCAuto(pOpMode, pAlliance, pLinear);
 
             pLinear.telemetry.addData(TAG, "Waiting for start ...");
             pLinear.telemetry.update();
