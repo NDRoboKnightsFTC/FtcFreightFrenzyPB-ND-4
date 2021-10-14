@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.hardware.rev.RevTouchSensor;
 import com.qualcomm.robotcore.hardware.DcMotorSimple;
 import com.qualcomm.robotcore.hardware.DistanceSensor;
 import com.qualcomm.robotcore.hardware.HardwareMap;
@@ -12,6 +13,7 @@ public class ProgrammingBoardHardware {
       
     public final HardwareMap hwMap;
     public final DcMotor leftFrontMotor;
+    public final RevTouchSensor digitalTouch;
     //**TODO public final Servo basicServo;
     //**TODO public final ColorSensor colorSensor;
 
@@ -23,7 +25,10 @@ public class ProgrammingBoardHardware {
         leftFrontMotor.setDirection(DcMotor.Direction.REVERSE);
         leftFrontMotor.setPower(0);
         leftFrontMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
- 
+
+        // Touch Sensor
+        digitalTouch = hwMap.get(RevTouchSensor.class, "digital_touch");
+
         // Servo
         //**TODO basicServo = hwMap.get(Servo.class, "basic_servo");
     
